@@ -1,0 +1,37 @@
+[package]
+name = "puregym_qr"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "puregym_qr"
+path = "src/lib.rs"
+
+[[bin]]
+name = "bot"
+path = "src/bin/bot.rs"
+
+[[bin]]
+name = "bot_lambda"
+path = "src/bin/bot_lambda.rs"
+
+[[bin]]
+name = "bot_management"
+path = "src/bin/bot_management.rs"
+
+[dependencies]
+clap = { version = "4.4", features = ["derive"] }
+reqwest = { version = "0.11", features = ["blocking", "json"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_urlencoded = "0.7"
+serde_json = "1.0"
+image = "0.24"
+qrcode = "0.13"
+teloxide = { version = "0.12", features = ["macros", "webhooks", "webhooks-axum"] }
+log = "0.4"
+pretty_env_logger = "0.5"
+tokio = { version =  "1.35", features = ["rt-multi-thread", "macros"] }
+lambda_http = "0.9"
+lambda_runtime = "0.9"
+thiserror = "1.0"
+anyhow = "1.0"
